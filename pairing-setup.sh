@@ -11,10 +11,6 @@ export APPDIR=$HOME/Desktop/Applications
 export HOMEBREW_CASK_OPTS="--appdir=$APPDIR"
 mkdir -p $APPDIR
 
-# install and run Dash, great developer reference app
-$BREWBIN cask install dash
-open $APPDIR/Dash.app
-
 # install pomander
 curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash
 
@@ -24,3 +20,7 @@ $BREWBIN install jq
 $BREWBINDIR/jq '.tab_size = 2 | .translate_tabs_to_spaces = true' "$SUBLIMESETTINGS" > "$SUBLIMESETTINGS".new
 cp "$SUBLIMESETTINGS" "$SUBLIMESETTINGS".backup
 mv "$SUBLIMESETTINGS".new "$SUBLIMESETTINGS"
+
+# install and run Dash, great developer reference app
+$BREWBIN cask install dash
+open $APPDIR/Dash.app
