@@ -4,6 +4,8 @@ To run:
 
 `curl -s https://raw.githubusercontent.com/jhogan4288/pairing-setup/master/pairing-setup.sh | bash`
 
+For students in hrsf76, this link is available on my Slack profile (@james) for easy access on a fresh pairing station.
+
 Current functionality:
 * Installs pomander
 * Installs [Dash](https://kapeli.com/dash), a great desktop developer reference app
