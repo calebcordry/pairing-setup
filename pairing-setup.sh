@@ -21,4 +21,6 @@ curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/instal
 # update sublime settings, using jq (command-line JSON manipulator)
 export SUBLIMESETTINGS=$HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 $BREWBIN install jq
-$BREWBINDIR/jq '.tab_size = 2 | .translate_tabs_to_spaces = true' "$SUBLIMESETTINGS" > "$SUBLIMESETTINGS"
+$BREWBINDIR/jq '.tab_size = 2 | .translate_tabs_to_spaces = true' "$SUBLIMESETTINGS" > "$SUBLIMESETTINGS".new
+cp "$SUBLIMESETTINGS" "$SUBLIMESETTINGS".backup
+mv "$SUBLIMESETTINGS".new "$SUBLIMESETTINGS"
