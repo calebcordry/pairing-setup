@@ -1,9 +1,7 @@
 #! /bin/bash
 
-cd $HOME
-
 # install macOS package manager in a location that allows us to install add'l packages without sudo access
-mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+mkdir $HOME/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 export BREWDIR=$HOME/homebrew
 export BREWBINDIR=$BREWDIR/bin
 export BREWBIN=$BREWBINDIR/brew
