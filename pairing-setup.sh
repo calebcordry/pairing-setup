@@ -41,8 +41,12 @@ function modify_sublime_settings ()
 	mv "${1}".new "${1}"
 }
 
+# initialize sublime paths
 SUBLIME_BASE_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
 SUBLIME_SETTINGS_DIR="$SUBLIME_BASE_DIR/Packages/User"
+SUBLIME_PACKAGE_CONTROL_DIR="$SUBLIME_BASE_DIR/Installed Packages"
+mkdir -p "$SUBLIME_SETTINGS_DIR" 
+mkdir -p "$SUBLIME_PACKAGE_CONTROL_DIR"
 
 # update main sublime user settings
 SUBLIME_USER_SETTINGS="$SUBLIME_SETTINGS_DIR/Preferences.sublime-settings"
@@ -54,7 +58,6 @@ modify_sublime_settings "$SUBLIME_JAVASCRIPT_BUILD_SETTINGS" '.cmd = [ "/usr/loc
 
 # install sublime package manager
 SUBLIME_PACKAGE_CONTROL_URL="https://packagecontrol.io/Package%20Control.sublime-package"
-SUBLIME_PACKAGE_CONTROL_DIR="$SUBLIME_BASE_DIR/Installed Packages"
 SUBLIME_PACKAGE_CONTROL_FILE="$SUBLIME_PACKAGE_CONTROL_DIR/Package Control.sublime-package"
 SUBLIME_PACKAGE_CONTROL_SETTINGS="$SUBLIME_SETTINGS_DIR/Package Control.sublime-settings"
 curl -s "$SUBLIME_PACKAGE_CONTROL_URL" > "$SUBLIME_PACKAGE_CONTROL_FILE"
