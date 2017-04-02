@@ -42,7 +42,7 @@ function modify_sublime_settings ()
 }
 
 # initialize sublime paths
-SUBLIME_BASE_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
+SUBLIME_BASE_DIR="$HOME/Library/Application Support/Sublime Text 3"
 SUBLIME_SETTINGS_DIR="$SUBLIME_BASE_DIR/Packages/User"
 SUBLIME_PACKAGE_CONTROL_DIR="$SUBLIME_BASE_DIR/Installed Packages"
 mkdir -p "$SUBLIME_SETTINGS_DIR" 
@@ -54,7 +54,7 @@ modify_sublime_settings "$SUBLIME_USER_SETTINGS" '.tab_size = 2 | .translate_tab
 
 # in-editor javascript builds via node
 SUBLIME_JAVASCRIPT_BUILD_SETTINGS="$SUBLIME_SETTINGS_DIR/JavaScript.sublime-build"
-modify_sublime_settings "$SUBLIME_JAVASCRIPT_BUILD_SETTINGS" '.cmd = [ "/usr/local/bin/node", "$file" ] | .selector = "source.js"'
+modify_sublime_settings "$SUBLIME_JAVASCRIPT_BUILD_SETTINGS" '.cmd = [ "/Users/student/.nvm/versions/node/v6.9.5/bin/node", "$file" ] | .selector = "source.js"'
 
 # install sublime package manager
 SUBLIME_PACKAGE_CONTROL_URL="https://packagecontrol.io/Package%20Control.sublime-package"
@@ -63,7 +63,7 @@ SUBLIME_PACKAGE_CONTROL_SETTINGS="$SUBLIME_SETTINGS_DIR/Package Control.sublime-
 curl -s "$SUBLIME_PACKAGE_CONTROL_URL" > "$SUBLIME_PACKAGE_CONTROL_FILE"
 
 # sublime dash integration
-modify_sublime_settings "$SUBLIME_PACKAGE_CONTROL_SETTINGS" '.installed_packages = .installed_packages + "DashDoc"'
+modify_sublime_settings "$SUBLIME_PACKAGE_CONTROL_SETTINGS" '.installed_packages = .installed_packages + ["DashDoc"]'
 
 echo ""
 echo "--------------------------------------------------------------------"
