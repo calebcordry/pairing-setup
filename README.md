@@ -4,7 +4,7 @@ To run:
 
 `curl -s https://raw.githubusercontent.com/jhogan4288/pairing-setup/master/pairing-setup.sh | bash`
 
-For students in hrsf76, this link is available on my Slack profile (@james) for easy access on a fresh pairing station.
+The fastest way to access the above command on a new pairing station is to type `github.com/jhogan4288` in the Chrome address bar, then click the "pairing-setup" repo.  For students in hrsf76, this link is also available on my Slack profile (@james) for reference.
 
 If anything gets borked, rebooting your pairing station will re-image it back to its daily starting configuration.
 
@@ -15,3 +15,4 @@ Current functionality:
 * Enables running JavaScript code directly from Sublime via node.js (&#8984;+B)
 * Sets Sublime tab size to 2
 * Installs pomander
+* Installs GitHub desktop client

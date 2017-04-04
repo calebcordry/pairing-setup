@@ -17,6 +17,10 @@ mkdir -p "$APP_DIR"
 "$BREW_BIN" cask install dash
 open "$APP_DIR"/Dash.app
 
+# install github desktop client
+"$BREW_BIN" cask install github-desktop
+open "$APP_DIR/GitHub Desktop.app"
+
 # install pomander, HR style guide enforcement tool
 POMANDER_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install"
 curl -s "$POMANDER_INSTALL_SCRIPT_URL" | bash
