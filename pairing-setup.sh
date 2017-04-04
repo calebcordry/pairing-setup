@@ -1,9 +1,7 @@
 #! /bin/bash
 
-# general setup
-PAIRING_SETUP_URL="https://raw.githubusercontent.com/jhogan4288/pairing-setup/master"
-
 # install macOS package manager in a location that allows us to install add'l packages without sudo access
+cd $HOME
 BREW_DIR="$HOME/homebrew"
 BREW_BIN_DIR="$BREW_DIR/bin"
 BREW_BIN="$BREW_BIN_DIR/brew"
