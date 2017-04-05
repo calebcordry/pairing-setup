@@ -14,12 +14,12 @@ export HOMEBREW_CASK_OPTS="--appdir=$APP_DIR"
 mkdir -p "$APP_DIR"
 
 # install and run Dash, great developer reference app
-"$BREW_BIN" cask install dash
-open "$APP_DIR"/Dash.app
+# "$BREW_BIN" cask install dash
+# open "$APP_DIR"/Dash.app
 
 # install pomander, HR style guide enforcement tool
-POMANDER_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install"
-curl -s "$POMANDER_INSTALL_SCRIPT_URL" | bash
+# POMANDER_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install"
+# curl -s "$POMANDER_INSTALL_SCRIPT_URL" | bash
 
 # install jq (command-line JSON manipulator) for modifying sublime settings without trampling current settings
 $BREW_BIN install jq
@@ -43,7 +43,7 @@ function modify_sublime_settings ()
 SUBLIME_BASE_DIR="$HOME/Library/Application Support/Sublime Text 3"
 SUBLIME_SETTINGS_DIR="$SUBLIME_BASE_DIR/Packages/User"
 SUBLIME_PACKAGE_CONTROL_DIR="$SUBLIME_BASE_DIR/Installed Packages"
-mkdir -p "$SUBLIME_SETTINGS_DIR" 
+mkdir -p "$SUBLIME_SETTINGS_DIR"
 mkdir -p "$SUBLIME_PACKAGE_CONTROL_DIR"
 
 # update main sublime user settings
@@ -53,6 +53,10 @@ modify_sublime_settings "$SUBLIME_USER_SETTINGS" '.tab_size = 2 | .translate_tab
 # in-editor javascript builds via node
 SUBLIME_JAVASCRIPT_BUILD_SETTINGS="$SUBLIME_SETTINGS_DIR/JavaScript.sublime-build"
 modify_sublime_settings "$SUBLIME_JAVASCRIPT_BUILD_SETTINGS" '.cmd = [ "/Users/student/.nvm/versions/node/v6.9.5/bin/node", "$file" ] | .selector = "source.js"'
+
+# update SublimeLinter package settings
+SUBLIMELINTER_USER_SETTINGS="$SUBLIME_SETTINGS_DIR/SublimeLinter.sublime-settings"
+modify_sublime_settings "$SUBLIMELINTER_USER_SETTINGS" '.linter = { eslint: { "@disable": false, "args": [], "excludes": [] }}'
 
 # update eslint package settings
 ESLINT_USER_SETTINGS="$SUBLIME_SETTINGS_DIR/ESLint.sublime-settings"
