@@ -54,6 +54,10 @@ modify_sublime_settings "$SUBLIME_USER_SETTINGS" '.tab_size = 2 | .translate_tab
 SUBLIME_JAVASCRIPT_BUILD_SETTINGS="$SUBLIME_SETTINGS_DIR/JavaScript.sublime-build"
 modify_sublime_settings "$SUBLIME_JAVASCRIPT_BUILD_SETTINGS" '.cmd = [ "/Users/student/.nvm/versions/node/v6.9.5/bin/node", "$file" ] | .selector = "source.js"'
 
+# update eslint package settings
+ESLINT_USER_SETTINGS="$SUBLIME_SETTINGS_DIR/ESLint.sublime-settings"
+modify_sublime_settings "$ESLINT_USER_SETTINGS" '.node_path = "/Users/student/.nvm/versions/node/v6.9.5/bin/"'
+
 # install sublime package manager
 SUBLIME_PACKAGE_CONTROL_URL="https://packagecontrol.io/Package%20Control.sublime-package"
 SUBLIME_PACKAGE_CONTROL_FILE="$SUBLIME_PACKAGE_CONTROL_DIR/Package Control.sublime-package"
@@ -61,7 +65,7 @@ SUBLIME_PACKAGE_CONTROL_SETTINGS="$SUBLIME_SETTINGS_DIR/Package Control.sublime-
 curl -s "$SUBLIME_PACKAGE_CONTROL_URL" > "$SUBLIME_PACKAGE_CONTROL_FILE"
 
 # sublime dash integration
-modify_sublime_settings "$SUBLIME_PACKAGE_CONTROL_SETTINGS" '.installed_packages = .installed_packages + ["DashDoc"]'
+modify_sublime_settings "$SUBLIME_PACKAGE_CONTROL_SETTINGS" '.installed_packages = .installed_packages + ["DashDoc", "ESLint"]'
 
 echo ""
 echo "--------------------------------------------------------------------"
